@@ -1,0 +1,33 @@
+{
+  "name": "@repo/proposal-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server pra controle agentico do Proposal Generator. Consumido por Aurora (Gemini-backed).",
+  "type": "module",
+  "main": "./src/index.ts",
+  "bin": {
+    "eos-proposal-mcp": "./src/index.ts"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx --watch src/index.ts",
+    "smoke": "bun run scripts/smoke.ts",
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@repo/database": "workspace:*",
+    "@repo/proposal-engine": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "eslint": "^9.39.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.2"
+  }
+}

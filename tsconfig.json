@@ -1,0 +1,10 @@
+{
+  "extends": "./tooling/typescript-config/base.json",
+  "include": [],
+  "references": [
+    { "path": "./packages/proposal-engine" },
+    { "path": "./packages/database" },
+    { "path": "./packages/proposal-mcp" },
+    { "path": "./apps/backoffice" }
+  ]
+}

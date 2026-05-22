@@ -1,0 +1,23 @@
+evId,label,trim,nominalKwh,depthOfDischarge
+rivian-r1s,Rivian R1S,Standard pack,93,0.80
+rivian-r1t,Rivian R1T,Standard pack,93,0.80
+porsche-taycan,Porsche Taycan,Performance Battery,79,0.80
+polestar-4,Polestar 4,Single Motor,100,0.80
+nissan-leaf,Nissan Leaf,S,40,0.80
+ford-mustang-mach-e,Ford Mustang Mach-E,Standard Range,70,0.80
+mercedes-benz-eqb-350,Mercedes-Benz EQB 350,EQB 350,70,0.80
+lucid-air-pure,Lucid Air Pure,Pure,88,0.80
+kia-niro-ev,Kia Niro EV,Wind,64,0.80
+kia-ev9,Kia EV9,Light RWD,76,0.80
+kia-ev6,Kia EV6,Standard Range,58,0.80
+fiat-500e,Fiat 500e,Base,42,0.80
+ford-f150-lightning,Ford F-150 Lightning,Standard Range,98,0.80
+dodge-charger-daytona,Dodge Charger Daytona,R/T,100,0.80
+bmw-ix-xdrive40,BMW iX xDrive40,xDrive40,76,0.80
+audi-a6-e-tron,Audi A6 e-tron,Premium,100,0.80
+volvo-c40-recharge,Volvo C40 Recharge,Single Motor,69,0.80
+volkswagen-id4,Volkswagen ID.4,Standard,62,0.80
+tesla-model-y,Tesla Model Y,Standard Range RWD,60,0.80
+tesla-model-s,Tesla Model S,Long Range,100,0.80
+tesla-model-3,Tesla Model 3,Standard Range,60,0.80
+volvo-ex40,Volvo EX40,Single Motor,69,0.80

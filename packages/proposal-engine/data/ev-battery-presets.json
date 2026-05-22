@@ -1,0 +1,29 @@
+{
+  "version": "ev-battery-presets-v1",
+  "depthOfDischarge": 0.8,
+  "notes": "Nominal pack kWh for the base trim of each cover EV. Multiplied by depthOfDischarge to autofill the conservative usable capacity in the backoffice quote builder. Adopters may consume this from JSON, CSV (data/ev-battery-presets.csv), SQL seed (database/003_ev_battery_presets.sql), or the JS module (src/lib/evBatteryPresets.js) — they all carry the same rows.",
+  "rows": [
+    { "evId": "rivian-r1s", "label": "Rivian R1S", "trim": "Standard pack", "nominalKwh": 93 },
+    { "evId": "rivian-r1t", "label": "Rivian R1T", "trim": "Standard pack", "nominalKwh": 93 },
+    { "evId": "porsche-taycan", "label": "Porsche Taycan", "trim": "Performance Battery", "nominalKwh": 79 },
+    { "evId": "polestar-4", "label": "Polestar 4", "trim": "Single Motor", "nominalKwh": 100 },
+    { "evId": "nissan-leaf", "label": "Nissan Leaf", "trim": "S", "nominalKwh": 40 },
+    { "evId": "ford-mustang-mach-e", "label": "Ford Mustang Mach-E", "trim": "Standard Range", "nominalKwh": 70 },
+    { "evId": "mercedes-benz-eqb-350", "label": "Mercedes-Benz EQB 350", "trim": "EQB 350", "nominalKwh": 70 },
+    { "evId": "lucid-air-pure", "label": "Lucid Air Pure", "trim": "Pure", "nominalKwh": 88 },
+    { "evId": "kia-niro-ev", "label": "Kia Niro EV", "trim": "Wind", "nominalKwh": 64 },
+    { "evId": "kia-ev9", "label": "Kia EV9", "trim": "Light RWD", "nominalKwh": 76 },
+    { "evId": "kia-ev6", "label": "Kia EV6", "trim": "Standard Range", "nominalKwh": 58 },
+    { "evId": "fiat-500e", "label": "Fiat 500e", "trim": "Base", "nominalKwh": 42 },
+    { "evId": "ford-f150-lightning", "label": "Ford F-150 Lightning", "trim": "Standard Range", "nominalKwh": 98 },
+    { "evId": "dodge-charger-daytona", "label": "Dodge Charger Daytona", "trim": "R/T", "nominalKwh": 100 },
+    { "evId": "bmw-ix-xdrive40", "label": "BMW iX xDrive40", "trim": "xDrive40", "nominalKwh": 76 },
+    { "evId": "audi-a6-e-tron", "label": "Audi A6 e-tron", "trim": "Premium", "nominalKwh": 100 },
+    { "evId": "volvo-c40-recharge", "label": "Volvo C40 Recharge", "trim": "Single Motor", "nominalKwh": 69 },
+    { "evId": "volkswagen-id4", "label": "Volkswagen ID.4", "trim": "Standard", "nominalKwh": 62 },
+    { "evId": "tesla-model-y", "label": "Tesla Model Y", "trim": "Standard Range RWD", "nominalKwh": 60 },
+    { "evId": "tesla-model-s", "label": "Tesla Model S", "trim": "Long Range", "nominalKwh": 100 },
+    { "evId": "tesla-model-3", "label": "Tesla Model 3", "trim": "Standard Range", "nominalKwh": 60 },
+    { "evId": "volvo-ex40", "label": "Volvo EX40", "trim": "Single Motor", "nominalKwh": 69 }
+  ]
+}

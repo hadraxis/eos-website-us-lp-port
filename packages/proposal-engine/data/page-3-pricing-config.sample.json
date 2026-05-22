@@ -1,0 +1,220 @@
+{
+  "version": "pricing-admin-v2",
+  "sourceWorkbook": "Eos-e - Descrição dos Planos (2).xlsx",
+  "catalogItems": [
+    {
+      "id": "battery",
+      "label": "9 kWh Battery",
+      "workbookName": "Sigen Battery Module 9.0 US",
+      "quantityLabel": "modules",
+      "cost": 2143,
+      "landedCost": 2185.86,
+      "cashSell": 3278.79,
+      "financeSell": 3060.204,
+      "enabled": true
+    },
+    {
+      "id": "controller",
+      "label": "Smart Controller (11.5 kW)",
+      "workbookName": "Sigen Energy Controller SP US",
+      "quantityLabel": "controller",
+      "cost": 1804,
+      "landedCost": 1840.08,
+      "cashSell": 2760.12,
+      "financeSell": 2576.112,
+      "enabled": true
+    },
+    {
+      "id": "smart-panel",
+      "label": "Smart Panel",
+      "workbookName": "Sigen LoadHub (Smart Panel)",
+      "quantityLabel": "panel",
+      "cost": 1128,
+      "landedCost": 1150.56,
+      "cashSell": 1725.84,
+      "financeSell": 1610.784,
+      "enabled": true
+    },
+    {
+      "id": "v2x",
+      "label": "V2X Module (25 kW, 25ft NACS)",
+      "workbookName": "V2X DC Charging Module 25 kW",
+      "quantityLabel": "module",
+      "cost": 1918,
+      "landedCost": 1956.36,
+      "cashSell": 2934.54,
+      "financeSell": 2738.904,
+      "enabled": true
+    },
+    {
+      "id": "installation-kit",
+      "label": "Installation Kit",
+      "workbookName": "Installation Kit (Wall-Mount)",
+      "quantityLabel": "kit",
+      "cost": 50,
+      "landedCost": 51,
+      "cashSell": 76.5,
+      "financeSell": 71.4,
+      "enabled": true
+    },
+    {
+      "id": "sensor-kit",
+      "label": "Power Sensor Kit-Fi",
+      "workbookName": "Power Sensor Kit",
+      "quantityLabel": "kit",
+      "cost": 138,
+      "landedCost": 140.76,
+      "cashSell": 211.14,
+      "financeSell": 197.064,
+      "enabled": true
+    }
+  ],
+  "bundleTemplates": [
+    {
+      "id": "essential",
+      "label": "Essential",
+      "description": "9 kWh residential backup profile",
+      "modules": 1,
+      "controllerCount": 1,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 1
+    },
+    {
+      "id": "plus",
+      "label": "Plus",
+      "description": "18 kWh residential backup profile",
+      "modules": 2,
+      "controllerCount": 1,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 1
+    },
+    {
+      "id": "pro",
+      "label": "Pro",
+      "description": "27 kWh residential backup profile",
+      "modules": 3,
+      "controllerCount": 1,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 1
+    },
+    {
+      "id": "premium",
+      "label": "Premium",
+      "description": "36 kWh residential backup profile",
+      "modules": 4,
+      "controllerCount": 1,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 1
+    },
+    {
+      "id": "ultimate",
+      "label": "Ultimate",
+      "description": "45 kWh residential backup profile",
+      "modules": 5,
+      "controllerCount": 1,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 1
+    },
+    {
+      "id": "commercial-essential",
+      "label": "Commercial Essential",
+      "description": "36 kWh commercial backup profile",
+      "modules": 4,
+      "controllerCount": 1,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 1
+    },
+    {
+      "id": "commercial-plus",
+      "label": "Commercial Plus",
+      "description": "54 kWh commercial two-stack backup profile",
+      "modules": 6,
+      "controllerCount": 2,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 2
+    },
+    {
+      "id": "commercial-pro",
+      "label": "Commercial Pro",
+      "description": "72 kWh commercial two-stack backup profile",
+      "modules": 8,
+      "controllerCount": 2,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 2
+    },
+    {
+      "id": "commercial-premium",
+      "label": "Commercial Premium",
+      "description": "90 kWh commercial two-stack backup profile",
+      "modules": 10,
+      "controllerCount": 2,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 2
+    },
+    {
+      "id": "commercial-ultimate",
+      "label": "Commercial Ultimate",
+      "description": "135 kWh commercial three-stack backup profile",
+      "modules": 15,
+      "controllerCount": 3,
+      "includeSmartPanel": true,
+      "includeInstallationKit": false,
+      "includeSensorKit": false,
+      "defaultV2xCount": 3
+    }
+  ],
+  "chargeDefaults": {
+    "installationDefault": 2000,
+    "shippingDefault": 150,
+    "permitDefault": 0
+  },
+  "finance": {
+    "aprOptions": [0.007897746915740855, 0.007897746915740855, 0.007897746915740855, 0.007897746915740855],
+    "termOptions": [36, 60, 120, 180, 240],
+    "defaultApr": 0.007897746915740855,
+    "defaultTermMonths": 240
+  },
+  "rules": {
+    "maxModules": 6,
+    "maxModulesWithV2x": 5,
+    "maxControllers": 3,
+    "averageEvBatteryKwh": 75,
+    "controllerContinuousKw": 11.5,
+    "controllerPeakKw": 17.1,
+    "controllerThroughputOptions": [
+      {
+        "count": 1,
+        "continuousKw": 11.5,
+        "peakKw": 17.1
+      },
+      {
+        "count": 2,
+        "continuousKw": 23,
+        "peakKw": 34.2
+      },
+      {
+        "count": 3,
+        "continuousKw": 34.5,
+        "peakKw": 51.3
+      }
+    ]
+  }
+}

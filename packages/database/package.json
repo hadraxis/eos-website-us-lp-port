@@ -1,0 +1,46 @@
+{
+  "name": "@repo/database",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./src/schemas/eos-proposal": {
+      "types": "./src/schemas/eos-proposal.ts",
+      "default": "./src/schemas/eos-proposal.ts"
+    }
+  },
+  "scripts": {
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:seed:pricing": "tsx src/seed-pricing-catalog.ts",
+    "db:seed:ev-presets": "tsx src/seed-ev-battery-presets.ts",
+    "db:seed:asset-lookup": "tsx src/seed-asset-lookup.ts",
+    "verify:proposal-contract": "tsx scripts/verify-proposal-contract.ts",
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/proposal-engine": "workspace:*",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.44.2",
+    "pg": "^8.13.0"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.15.3",
+    "@types/pg": "^8.11.10",
+    "drizzle-kit": "^0.30.0",
+    "eslint": "^9.39.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.2"
+  }
+}

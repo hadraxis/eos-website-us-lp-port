@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "documentTitle": "Your Energy Solution Proposal",
+    "proposalNumber": "26040161",
+    "dateCreated": "April 3, 2026",
+    "expirationDate": "April 17, 2026",
+    "termsUrl": "https://www.eos-e.com/legal/Installation-Terms-and-Conditions.pdf",
+    "brochureUrl": "https://eossolarloan1-my.sharepoint.com/:b:/g/personal/charles_atkins_eos-e_com/IQDB7O1QENmHQqFcVI_OIH6aAT9xcvYYBOEAZz6tdIbDl00?e=NOTikL",
+    "quickbooksEstimateId": "",
+    "quickbooksDocNumber": "",
+    "currency": "USD",
+    "locale": "en-US"
+  },
+  "client": {
+    "id": "customer-2418-memorial-park",
+    "pipedrivePersonId": "",
+    "quickbooksCustomerId": "",
+    "name": "Charles Example",
+    "addressLines": [
+      "2418 Memorial Park Drive",
+      "Houston, TX 77007"
+    ]
+  },
+  "seller": {
+    "name": "Eos Solar Inc.",
+    "phone": "(833) 989-3737",
+    "email": "support@eos-e.com",
+    "website": "eos-e.com",
+    "officePhone": "(833) 989-3737",
+    "supportEmail": "support@eos-e.com",
+    "facebook": "join.eos",
+    "instagram": "join.eos",
+    "linkedin": "eospowerai"
+  },
+  "system": {
+    "heroTag": "Born in Texas",
+    "solutionLabel": "COMPLETE SOLUTION",
+    "presetId": "commercial-plus",
+    "evId": "ford-f150-lightning",
+    "title": "54 kWh Commercial Plus Backup Solution",
+    "summary": "Commercial Plus two-stack backup configuration, depending on usage",
+    "includesV2x": false,
+    "includeSmartPanel": true,
+    "includeInstallationKit": false,
+    "includeSensorKit": false,
+    "stacks": [
+      {
+        "batteryCount": 3,
+        "v2x": false,
+        "position": "primary"
+      },
+      {
+        "batteryCount": 3,
+        "v2x": false,
+        "position": "secondary"
+      }
+    ],
+    "lineItems": [
+      {
+        "quantity": "6 un",
+        "label": "Battery",
+        "description": "9 kWh Energy Storage Battery Module"
+      },
+      {
+        "quantity": "2 un",
+        "label": "Smart Controller",
+        "description": "11.5 kW Energy System Controller"
+      },
+      {
+        "quantity": "1 un",
+        "label": "Smart Panel",
+        "description": "Smart Energy Load Panel"
+      },
+      {
+        "quantity": "Included",
+        "label": "Wiring",
+        "description": "Wiring"
+      },
+      {
+        "quantity": "Included",
+        "label": "Shipping",
+        "description": "Shipping"
+      },
+      {
+        "quantity": "Included",
+        "label": "Installation",
+        "description": "Installation"
+      }
+    ]
+  },
+  "pricing": {
+    "subtotal": 29068.82,
+    "taxLabel": "Estimated tax (8.25%)",
+    "taxAmount": 2398.18,
+    "totalLabel": "Grand Total (Cash Payment)",
+    "grandTotal": 31467,
+    "cashInstallmentLabel": "",
+    "cashInstallmentPayment": "",
+    "paymentPlans": [
+      {
+        "term": "60 Months",
+        "payment": "$573/mo"
+      },
+      {
+        "term": "120 Months",
+        "payment": "$353/mo"
+      },
+      {
+        "term": "240 Months",
+        "payment": "$254/mo"
+      }
+    ]
+  },
+  "narrative": {
+    "summaryTitle": "Project Summary",
+    "summaryParagraphs": [
+      "This proposal is structured for fixed-layout PDF delivery while still allowing selected customer, pricing, and project notes to be injected from QuickBooks or the internal Eos site.",
+      "Final equipment count, final pricing, and scope remain subject to site verification, utility constraints, permit review, and any approved change orders."
+    ],
+    "siteDetailsTitle": "Site-Specific Notes",
+    "siteDetails": [
+      "Existing service equipment and panel condition to be confirmed during pre-install inspection.",
+      "Generator coexistence, ATS strategy, and critical-load segmentation to be confirmed if legacy backup equipment is present.",
+      "If V2X is included, compatible EV model and charger configuration must be confirmed before final procurement."
+    ],
+    "standardInclusionsTitle": "Standard Installation Scope",
+    "standardInclusions": [
+      "Delivery of listed hardware and standard wall-mounted installation.",
+      "Commissioning, safety testing, activation, and mobile app access.",
+      "Basic electrical material and wiring required for the listed configuration.",
+      "Permit coordination and utility-facing paperwork only if explicitly included in the sold scope."
+    ],
+    "exclusionsTitle": "Items Not Included Unless Listed",
+    "exclusions": [
+      "Main service upgrades, trenching, stucco or finish repair, and structural corrections.",
+      "Additional labor caused by concealed conditions, legacy wiring defects, or failed pre-existing equipment.",
+      "EV charger replacements or custom V2X integration work not listed in the proposal line items."
+    ],
+    "termsTitle": "Standard Terms",
+    "terms": [
+      "Pricing in this template is illustrative and should be replaced by approved estimate values before sending.",
+      "Proposal validity, taxes, and financing are subject to lender, municipality, and project timing.",
+      "Eos may revise scope if the site survey or utility review reveals material changes from the assumed conditions."
+    ],
+    "acceptanceTitle": "Approval",
+    "acceptanceBody": "Client approval authorizes Eos to finalize site verification, paperwork, and scheduling under the agreed scope and pricing version."
+  },
+  "standardInstallationTerms": [
+    "Complete professional installation.",
+    "Integration with existing solar equipment into a unified system when applicable.",
+    "System commissioning, safety testing, and activation.",
+    "Real-time monitoring mobile app access.",
+    "10-year manufacturer warranty on battery, controller, and inverter.",
+    "All work guaranteed to meet local electrical codes and standards.",
+    "Basic electrical materials and wiring are included.",
+    "Additional materials or unforeseen electrical work may create added charges."
+  ],
+  "v2xInstallationTerm": "3-year manufacturer warranty on the V2X module when included in scope."
+}

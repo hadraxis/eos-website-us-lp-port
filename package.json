@@ -1,0 +1,42 @@
+{
+  "name": "eos-proposal-uplift",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Pacote de upgrade para o slice de Proposal Generator do monorepo eosloan-turborepo. Drop-in: cada arquivo espelha o caminho do monorepo de destino. Tambem roda standalone pra teste isolado.",
+  "type": "module",
+  "engines": {
+    "node": ">=18.18"
+  },
+  "packageManager": "bun@1.3.6",
+  "workspaces": [
+    "packages/*",
+    "apps/*",
+    "tooling/*"
+  ],
+  "scripts": {
+    "build": "dotenv -- turbo run build",
+    "dev": "dotenv -- turbo run dev",
+    "dev:backoffice": "dotenv -- turbo run dev --filter=backoffice",
+    "dev:mcp": "dotenv -- turbo run start --filter=@repo/proposal-mcp",
+    "lint": "turbo run lint",
+    "check-types": "turbo run check-types",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:down:volumes": "docker compose down -v",
+    "db:generate": "dotenv -- turbo run db:generate --filter=@repo/database",
+    "db:migrate": "dotenv -- turbo run db:migrate --filter=@repo/database",
+    "db:push": "dotenv -- turbo run db:push --filter=@repo/database",
+    "db:studio": "dotenv -- turbo run db:studio --filter=@repo/database",
+    "db:seed:pricing": "dotenv -- turbo run db:seed:pricing --filter=@repo/database",
+    "db:seed:ev-presets": "dotenv -- turbo run db:seed:ev-presets --filter=@repo/database",
+    "db:seed:asset-lookup": "dotenv -- turbo run db:seed:asset-lookup --filter=@repo/database",
+    "db:seed:all": "bun run db:seed:pricing && bun run db:seed:ev-presets && bun run db:seed:asset-lookup",
+    "verify:proposal-contract": "dotenv -- turbo run verify:proposal-contract --filter=@repo/database"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0",
+    "prettier": "^3.7.4",
+    "turbo": "^2.7.1",
+    "typescript": "^5.9.2"
+  }
+}

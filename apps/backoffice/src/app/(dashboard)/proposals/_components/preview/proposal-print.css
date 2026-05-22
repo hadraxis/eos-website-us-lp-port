@@ -1,0 +1,595 @@
+/*
+ * proposal-print.css
+ *
+ * Estilo do preview/PDF da proposta. Portado do standalone (Vite/React)
+ * — mesmo layout, mesma matematica de mm, mesma tipografia.
+ *
+ * Fonte Montserrat via Google Fonts (sem necessidade de copiar .ttf).
+ * Pra prod, considere self-host pra evitar dependencia externa em CI.
+ *
+ * Usado tanto na preview interativa do backoffice quanto no PDF
+ * gerado via Playwright headless (apps/backoffice render route).
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* ============================================================
+ * Tokens (alinhados ao standalone)
+ * ============================================================ */
+.proposal-document,
+.proposal-document * {
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --page-padding-x: 12mm;
+  --page-padding-y: 9mm;
+  --paper: #fafafa;
+  --shadow: rgba(27, 45, 74, 0.14);
+  --blue: #0a84e8;
+  --green: #59bc62;
+  --ink: #262626;
+  --muted: #7b7b7b;
+  --line: #dfe3e8;
+  --panel: rgba(245, 245, 245, 0.9);
+  --proposal-body: 15px;
+  --proposal-small: 11px;
+  --proposal-label: 13px;
+  --proposal-title: 24px;
+  --proposal-total: 20px;
+}
+
+/* ============================================================
+ * Layout raiz
+ * ============================================================ */
+.proposal-document {
+  width: fit-content;
+  margin: 22px auto 0;
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  color: var(--ink);
+}
+
+.proposal-page {
+  position: relative;
+  width: var(--page-width);
+  height: var(--page-height);
+  padding: var(--page-padding-y) var(--page-padding-x);
+  background: var(--paper);
+  box-shadow: 0 22px 48px var(--shadow);
+  overflow: hidden;
+  page-break-after: auto;
+  break-after: auto;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.proposal-page + .proposal-page {
+  margin-top: 22px;
+}
+
+/* ============================================================
+ * Cover page
+ * ============================================================ */
+.cover-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.cover-page__header,
+.solution-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.cover-page__brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cover-page__logo {
+  width: 48mm;
+  height: auto;
+}
+
+.cover-page__origin {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.cover-page__origin img {
+  width: 18px;
+  height: 18px;
+}
+
+.cover-page__meta {
+  text-align: right;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.cover-page__hero {
+  margin-top: 18mm;
+}
+
+.cover-page__title {
+  max-width: 162mm;
+  margin: 0;
+  color: var(--blue);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.cover-page__client {
+  margin-top: 10mm;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.42;
+}
+
+.cover-page__client strong {
+  color: #6b6b6b;
+}
+
+.cover-page__art {
+  margin-top: 8mm;
+}
+
+.cover-page__art img {
+  display: block;
+  width: 100%;
+  max-height: 102mm;
+  object-fit: contain;
+}
+
+.cover-page__footer {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1fr;
+  gap: 8mm;
+  position: absolute;
+  right: var(--page-padding-x);
+  bottom: var(--page-padding-y);
+  left: var(--page-padding-x);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cover-page__footer strong {
+  color: #666;
+}
+
+.contact-list {
+  display: grid;
+  gap: 6px;
+}
+
+.contact-list a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cover-page__contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: #888;
+  color: #fff;
+}
+
+.cover-page__contact-icon svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* ============================================================
+ * Solution page
+ * ============================================================ */
+.solution-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-page__logo {
+  width: 38mm;
+}
+
+.solution-page__header-rail {
+  flex: 1 1 auto;
+  height: 4px;
+  margin-top: 12px;
+  background: #989898;
+}
+
+.solution-page__eyebrow {
+  margin: 0;
+  color: #8d8d8d;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.solution-page__variant {
+  margin: 10px 0 0;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.solution-page__hero {
+  margin-top: 4mm;
+}
+
+.solution-page__title {
+  margin: 0;
+  color: var(--blue);
+  font-size: 24px;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.solution-page__subtitle {
+  margin: 5px 0 0;
+  color: var(--green);
+  font-size: 16px;
+  line-height: 1.18;
+  font-weight: 700;
+}
+
+.solution-page__subtitle span {
+  font-weight: 400;
+}
+
+/* ============================================================
+ * Line items table
+ * ============================================================ */
+.line-items-table {
+  width: 100%;
+  margin-top: 3mm;
+  border-collapse: collapse;
+}
+
+.line-items-table td {
+  padding: 2px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.line-items-table td:first-child {
+  width: 22mm;
+  color: #6e6e6e;
+  font-weight: 700;
+}
+
+.line-items-table td:nth-child(2) {
+  width: 54mm;
+  color: #666;
+  font-weight: 700;
+}
+
+.line-items-table td:last-child {
+  color: #959595;
+}
+
+.line-items-table__row--discount td {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* ============================================================
+ * Pricing summary
+ * ============================================================ */
+.pricing-summary {
+  margin-top: 3mm;
+}
+
+.pricing-summary__grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 3px;
+  column-gap: 18px;
+  align-items: baseline;
+}
+
+.pricing-summary__grid p {
+  margin: 0;
+}
+
+.pricing-summary__discount {
+  color: var(--blue);
+}
+
+.pricing-summary__total-label {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.pricing-summary__total-value {
+  color: var(--green);
+  font-size: var(--proposal-total);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+/* ============================================================
+ * Payment plans
+ * ============================================================ */
+.payment-plans {
+  border-radius: 18px;
+  background: var(--panel);
+  margin-top: 2.5mm;
+  padding: 7px 14px 8px;
+}
+
+.payment-plans__header {
+  margin: 0;
+  color: var(--blue);
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.payment-plans__header strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.payment-plans__subcopy {
+  display: block;
+  margin-top: 2px;
+  color: #6d8bb2;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.payment-plans__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--plan-count, 3), minmax(112px, 148px));
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 6px;
+}
+
+.payment-plans__grid[data-plan-count='3'] {
+  --plan-count: 3;
+}
+
+.payment-plans__grid[data-plan-count='2'] {
+  --plan-count: 2;
+}
+
+.payment-plans__grid[data-plan-count='1'] {
+  --plan-count: 1;
+  justify-content: flex-end;
+}
+
+.payment-plan-card {
+  min-width: 0;
+  text-align: center;
+  color: var(--blue);
+}
+
+.payment-plan-card__term-row {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 17px;
+}
+
+.payment-plan-card__term {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.payment-plan-card__payment {
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.payment-plan-card__badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* ============================================================
+ * Visual composition (panel + stack art)
+ * ============================================================ */
+.visual-composition {
+  display: grid;
+  flex: 1 1 auto;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  border-radius: 20px;
+  background: var(--panel);
+  margin-top: 3mm;
+  margin-bottom: 2mm;
+  padding: 8px 16px 7px;
+}
+
+.visual-composition__grid {
+  display: grid;
+  gap: 16px;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.visual-composition__item {
+  display: grid;
+  grid-template-rows: 22px minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.visual-composition__media {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.visual-composition__item--panel .visual-composition__media {
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.visual-composition__item--stack .visual-composition__media {
+  align-items: center;
+}
+
+.visual-composition__item img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.visual-composition__item--panel img {
+  max-height: 126px;
+}
+
+.visual-composition__item--stack img {
+  width: 100%;
+  max-width: 220px;
+  max-height: 214px;
+}
+
+.visual-composition__label {
+  align-self: start;
+  margin: 0;
+  color: #8b8b8b;
+  font-size: 10px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.visual-composition__caption-panel {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 28px;
+  padding-top: 4px;
+}
+
+.visual-composition__caption {
+  margin: 0;
+  text-align: center;
+  color: #787878;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.visual-composition__caption strong {
+  color: #5f5f5f;
+}
+
+/* ============================================================
+ * Terms block
+ * ============================================================ */
+.terms-block {
+  flex: 0 0 auto;
+  border-radius: 18px;
+  background: var(--panel);
+  margin-top: auto;
+  padding: 7px 14px 8px;
+}
+
+.terms-block__heading {
+  display: block;
+  margin: 0;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.terms-block__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+  margin-top: 5px;
+}
+
+.terms-block__columns p {
+  margin: 0;
+  color: #5f5f5f;
+  font-size: 9.5px;
+  line-height: 1.16;
+  font-weight: 500;
+}
+
+.terms-block__columns strong {
+  color: #3f3f3f;
+  font-weight: 600;
+}
+
+/* ============================================================
+ * Print rules (PDF render via Playwright/headless Chrome ou Ctrl+P)
+ * ============================================================ */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: var(--paper);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  [data-no-print='true'] {
+    display: none !important;
+  }
+
+  .proposal-document {
+    width: fit-content !important;
+    margin: 0 !important;
+    overflow: visible !important;
+  }
+
+  .proposal-page {
+    height: 294mm;
+    background: var(--paper);
+    box-shadow: none;
+    margin: 0 !important;
+  }
+
+  .proposal-page + .proposal-page {
+    margin-top: 0 !important;
+  }
+}

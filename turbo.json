@@ -1,0 +1,20 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "globalDependencies": [".env"],
+  "globalEnv": ["DATABASE_URL", "REDIS_URL", "NODE_ENV", "NEXT_PUBLIC_API_URL"],
+  "tasks": {
+    "build": { "dependsOn": ["^build"], "outputs": ["dist/**", ".next/**"] },
+    "dev": { "cache": false, "persistent": true },
+    "start": { "cache": false, "persistent": true },
+    "lint": {},
+    "check-types": { "dependsOn": ["^check-types"] },
+    "db:generate": { "cache": false },
+    "db:migrate": { "cache": false },
+    "db:push": { "cache": false },
+    "db:studio": { "cache": false, "persistent": true },
+    "db:seed:pricing": { "cache": false },
+    "db:seed:ev-presets": { "cache": false },
+    "db:seed:asset-lookup": { "cache": false },
+    "verify:proposal-contract": { "cache": false }
+  }
+}
